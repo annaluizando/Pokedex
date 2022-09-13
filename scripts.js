@@ -34,6 +34,7 @@ const renderPokemon = async (pokemon) => {
         pokemonNumber.innerHTML = data.id;
         pokemonImg.src = data['sprites']['versions']['generation-v']['black-white']['animated']['front_default'];
     
+        searchPokemon = data.id;
         input.value = '';
 
     }else{
@@ -53,7 +54,7 @@ form.addEventListener('submit', (event) => {
 });
 
 buttonPrev.addEventListener('click', () => {
-    if (searchPokemon > 1){
+    if(searchPokemon > 1){
         searchPokemon -= 1;
         renderPokemon(searchPokemon);
     }
